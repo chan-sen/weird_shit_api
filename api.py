@@ -1,5 +1,5 @@
 import flask
-from flask import request, jsonify
+from flask import jsonify
 import requests
 from bs4 import BeautifulSoup
 from random import randint
@@ -37,6 +37,9 @@ def home():
 
     # Find description
     description = soup.find("div", {"class": "paragraph"}).text
+    description = description.split('Price:')[0]
+
+    description = (description.encode('ascii', 'ignore')).decode("utf-8")
     print(description)
 
     # Find price
