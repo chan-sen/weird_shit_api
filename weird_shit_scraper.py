@@ -1,11 +1,12 @@
 from random import randint
+from typing import Dict
 import requests
 from bs4 import BeautifulSoup
 
 __author__ = 'chansen'
 
 
-def scrape_weird_shit():
+def scrape_weird_shit() -> Dict:
     """
         Get random item from home page of weirdshityoucanbuy.com
 
